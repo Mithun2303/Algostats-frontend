@@ -13,6 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path='/login' element={<Login/>}/>
         <Route path='/leaderboard/' element={<Leaderboard/>}/>
         <Route path='/leaderboard/class/:classId' element={<ClassLeaderboard/>}/>
         <Route path='/leaderboard/batch/:batchId' element={<BatchLeaderboard/>}/>

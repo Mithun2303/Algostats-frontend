@@ -81,6 +81,5 @@ export default {
         fadein: 'fade-in 1s ease-in-out 0.45s 1',
       }
     },
-  },
   plugins: [],
 }

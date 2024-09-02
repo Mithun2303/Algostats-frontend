@@ -29,7 +29,7 @@ export const Leaderboard = () => {
     }, []);
 
     const renderRow = (elt, idx) => {
-        return (<TableRow className={`${idx % 2 == 0 ? "bg-[#363636] hover:bg-[#363636]" : "hover:bg-[#2b2b2b]"}  `}>
+        return (<TableRow className={`${idx % 2 == 0 ? " hover:bg-[#363636]" : "hover:bg-[#2b2b2b]"}  `}>
             <TableCell className="text-center">{idx + 1}</TableCell>
             <TableCell className="text-center">{elt.id}</TableCell>
             <TableCell className="text-center">{elt.class}</TableCell>
@@ -39,14 +39,14 @@ export const Leaderboard = () => {
         </TableRow>)
     }
     return (
-        <main className="p-12 bg-black">
+        <main className="p-12 ">
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>
-            <div className="text-white rounded-lg bg-[#2b2b2b] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
+            <div className="text-white rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
                 <Table className="text-center">
                     <TableHeader>
-                        <TableRow className="bg-[#2b2b2b]">
+                        <TableRow className="bg-">
                             <TableHead className="px-2 text-white  font-bold text-lg text-center">Position</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Roll Number</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Class</TableHead>
