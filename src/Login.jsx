@@ -17,26 +17,26 @@ function Login() {
     <div class="bg-gradient font-[sans-serif]">
       <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
         <div class="max-w-md w-full animate-fadein">
-          <div class="p-10 rounded-2xl bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,1)] shadow-sh backdrop-blur-lg">
+          <div class="p-10 rounded-2xl bg-[rgba(255,255,255,0.2)] shadow-sh backdrop-blur-lg">
             <h2 class="text-white text-center text-2xl font-bold">Sign in</h2>
             <form class="mt-8 space-y-4">
               <div>
                 <label class="text-white text-md font-bold mb-2 block">Email</label>
                 <div class="relative flex items-center">
-                  <input name="email" type="text" class="w-full text-gray-800 text-sm border border-gray-300 px-4 py-3 rounded-md outline-none" placeholder="@gmail.com" required/>
+                  <input name="email" type="text" class="w-full text-gray-800 text-sm border borer-gray-300 px-4 py-3 rounded-md outline-none" placeholder="@gmail.com" required/>
                 </div>
               </div>
 
               <div>
                 <label class="text-white text-md font-bold mb-2 block">Password</label>
                 <div class="relative flex items-center">
-                  <input name="password" type="password" class="w-full text-gray-800 text-sm border border-gray-300 px-4 py-3 rounded-md outline-none" placeholder="••••••••" required/>
+                  <input name="password" type="password" class="w-full text-gray-800 text-sm border borde-gray-300 px-4 py-3 rounded-md outline-none" placeholder="••••••••" required/>
                 </div>
               </div>
 
               <div class="flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center">
-                  <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 border-gray-300 rounded" />
+                  <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 borer-gray-300 rounded" />
                   <label for="remember-me" class="ml-3 block text-sm text-white">
                     Remember me
                   </label>
