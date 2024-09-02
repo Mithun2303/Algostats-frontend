@@ -4,6 +4,10 @@ import { ClassLeaderboard } from './ClassLeaderboard';
 import { BatchLeaderboard } from './BatchLeaderboard';
 import { StreamLeaderboard } from './StreamLeaderboard';
 import { Leaderboard } from './Leaderboard';
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import Login from './Login'
+
 function App() {
 
   return (
