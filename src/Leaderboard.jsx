@@ -19,13 +19,27 @@ import {
 
 export const Leaderboard = () => {
     const [response, setResponse] = useState([]);
+    const generateSampleData = () => {
+        const sampleData = [];
+        for (let i = 1; i <= 40; i++) {
+            sampleData.push({
+                id: `22PC${i.toString().padStart(2, '0')}`,
+                class: "Applied Mathematics", // You can change this to a random name if needed
+                score: 100 + i, // Generating ascending scores
+                stream: "CS",
+                batch: "2022"
+            });
+        }
+        return sampleData;
+    };
     const getLeaderboard = async () => {
         const resp = await axios.get(`http://localhost:3000/api/leaderboard/`);
         setResponse(resp.data);
         console.log(resp.data);
     }
     useEffect(() => {
-        getLeaderboard();
+        setResponse(generateSampleData());
+        //getLeaderboard();
     }, []);
 
     const renderRow = (elt, idx) => {
@@ -43,10 +57,10 @@ export const Leaderboard = () => {
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>
-            <div className="text-white rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
-                <Table className="text-center">
+            <div className="text-white rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-30  max-h-full mt-20">
+                <Table className="table-auto  w-full text-center">
                     <TableHeader>
-                        <TableRow className="bg-">
+                        <TableRow className="bg-[#001C2A] p-4">
                             <TableHead className="px-2 text-white  font-bold text-lg text-center">Position</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Roll Number</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Class</TableHead>
@@ -55,10 +69,14 @@ export const Leaderboard = () => {
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Batch</TableHead>
                         </TableRow>
                     </TableHeader>
-                    <TableBody className="">
-                        {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
-                    </TableBody>
                 </Table>
+                <div className="max-h-80 overflow-y-auto text-center"> {/* Set a max height for scrolling */}
+                        <Table className="table-auto w-full text-center">
+                            <TableBody>
+                                {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
+                            </TableBody>
+                        </Table>
+                </div>
 
             </div>
         </main>
