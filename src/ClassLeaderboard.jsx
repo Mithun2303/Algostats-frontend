@@ -40,14 +40,14 @@ export const ClassLeaderboard = () => {
         </TableRow>)
     }
     return (
-        <main className="p-12 bg-black">
+        <main className="p-12 bg-grad">
                 <div className="text-3xl text-white font-bold p-4 md:mx-24">
                     <span>Leaderboard - Applied Mathematics and Computational Sciences - {classId.toUpperCase()}</span>
                 </div>
-            <div className="text-white rounded-lg bg-[#2b2b2b] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
+            <div className="text-white rounded-lg bg-[rgba(255,255,255,0.1)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
                 <Table className="text-center">
                     <TableHeader>
-                        <TableRow className="bg-[#2b2b2b]">
+                        <TableRow className="bg-">
                             <TableHead className="px-2 text-white  font-bold text-lg text-center">Position</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Roll Number</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Score</TableHead>
