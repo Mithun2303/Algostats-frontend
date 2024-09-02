@@ -39,11 +39,11 @@ export const Leaderboard = () => {
         </TableRow>)
     }
     return (
-        <main className="p-12 ">
+        <main className="p-12 bg-grad ">
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>
-            <div className="text-white rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
+            <div className="text-white rounded-lg overflow-auto bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
                 <Table className="text-center">
                     <TableHeader>
                         <TableRow className="bg-">
