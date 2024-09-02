@@ -13,18 +13,27 @@ function RecentlySolvedCard() {
   ];
 
   return (
-    <Card className="bg-gray-700 p-4 rounded-lg text-white border-none shadow-lg">
-      <h3 className="text-lg font-semibold mb-4">Recently Solved</h3>
+    <Card className="bg-gray-700 p-4 h-80 rounded-lg text-white border-none shadow-lg mt-4">
+      <h3 className="text-3xl font-semibold mb-4 mt-4">Recently Solved</h3>
       <ul>
-        {problems.map((problem, index) => (
-          <li key={index} className="flex justify-between">
-            <span>{problem.title}</span>
-            <span className={`text-${problem.difficulty === 'Easy' ? 'green-400' : problem.difficulty === 'Medium' ? 'yellow-400' : 'red-400'}`}>
-              {problem.difficulty}
-            </span>
-          </li>
-        ))}
-      </ul>
+  {problems.map((problem, index) => (
+    <li key={index} className="flex justify-between">
+      <span>{problem.title}</span>
+      <span
+        className={`${
+          problem.difficulty === 'Easy'
+            ? 'text-green-400'
+            : problem.difficulty === 'Medium'
+            ? 'text-yellow-400'
+            : 'text-red-400'
+        }`}
+      >
+        {problem.difficulty}
+      </span>
+    </li>
+  ))}
+</ul>
+
     </Card>
   );
 }
