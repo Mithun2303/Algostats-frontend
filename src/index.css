@@ -66,4 +66,5 @@
 body{
   /* background: linear-gradient(90deg, #000 7.26%, #00344D 28.01%, #014567 38.5%, #006A9D 54.88%, #004667 71.86%, #002D42 83.62%, #000 112.62%); */
   background-color: #191919;
+  margin-left: 5px;
 }

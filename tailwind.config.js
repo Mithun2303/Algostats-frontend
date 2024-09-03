@@ -9,12 +9,10 @@ export default {
   	extend: {
 		backgroundImage: {
 			'grad' : 'linear-gradient(120deg, #000 1.7%, #00344D 23.54%, #014567 34.6%, #006A9D 51.84%, #004667 69.72%, #002D42 82.11%, #000 112.66%);'
+
 		  },
 		  boxShadow : {
 			'sh' : '0 4px 30px rgba(0, 0, 0, 0.1)',
-		  },
-		  colors : {
-			'aq1' : '#002537','aq2' : '#00344D'
 		  },
 		  keyframes: {
 			"fade-in": {
@@ -35,6 +33,7 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			glassbg:'rgb(255,255,255,0.2)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
