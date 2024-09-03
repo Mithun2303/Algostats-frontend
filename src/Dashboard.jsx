@@ -9,12 +9,12 @@ export function Dashboard() {
 
   //const [date, setDate] = React.useState<Date | undefined>(new Date())
   return (
-    <div className="bg-grad p-8">
-      <div className="md:flex flex-col md:flex-row gap-6">
-        <div className='md:w-4/6'>
-          <ProfileCard className="px-12" />
+    <div className="bg-grad md:p-8">
+      <div className="md:flex flex-col md:flex-row gap-4">
+        <div className='md:w-2/3'>
+          <ProfileCard className="" />
         </div>
-        <div className='md:w-2/6'>
+        <div className='md:w-1/3'>
           <RecentlySolvedCard className="px-12" />
         </div>
       </div>
@@ -38,25 +38,25 @@ export function Dashboard() {
           <Calendar className="rounded-md border text-white" />
         </div> */}
 
-      <div className='flex w-full md:flex-nowrap flex-wrap-reverse pt-6 justify-between'>
-        <div className='flex flex-wrap w-fi gap-6 bg-we'>
-          <div className='md:w  '>
+      <div className='flex w-full md:flex-nowrap gap-0 flex-wrap-reverse pt-3 justify-between'>
+        <div className='flex md:w-3/4 flex-wrap  justify-start  bg-hite'>
+          <div className='md:w-1/3 w-full p-2 '>
             <TaskCard assigned="22PC19" title="Task - 1" completed={3} total={15} />
           </div>
-          <div className='md: '>
+          <div className='md:w-1/3 w-full p-2 '>
             <TaskCard assigned="22PC19" title="Task - 2" completed={3} total={15} />
           </div>
-          <div className='md:  '>
+          <div className='md:w-1/3 w-full p-2 '>
             <TaskCard assigned="22PC19" title="Task - 2" completed={3} total={15} />
           </div>
-          <div className='md:'>
+          <div className='md:w-1/3 w-full p-2'>
             <TaskCard assigned="22PC19" title="Task - 2" completed={3} total={15} />
           </div>
-          <div className='md: '>
+          <div className='md:w-1/3 w-full p-2 '>
             <TaskCard assigned="22PC19" title="Task - 2" completed={3} total={15} />
           </div>
         </div>
-        <div className=' '>
+        <div className='md:w-1/4 p-2 w-full'>
           <Calendar className="rounded-md  flex justify-center w-full p-12 text-white  bg-glassbg" />
         </div>
       </div>
