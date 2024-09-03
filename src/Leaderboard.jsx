@@ -53,7 +53,7 @@ export const Leaderboard = () => {
         </TableRow>)
     }
     return (
-        <main className="p-12 ">
+        <main className="p-12 bg-grad ">
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>

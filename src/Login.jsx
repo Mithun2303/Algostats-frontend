@@ -2,19 +2,7 @@ import React from 'react'
 
 function Login() {
   return (
-    // <main class='max-w-screen min-h-screen bg-gradient'>
-    //     <div class='flex justify-center items-center'>
-    //         <form>
-    //             <div>
-    //                 <label for="email"><b>Email</b></label>
-    //                 <input type='text' placeholder='@gmail.com' name='email' required></input>
-    //                 <label for="password"><b>Password</b></label>
-    //                 <input type='password' placeholder='••••••••' name='password' required></input>
-    //             </div>
-    //         </form>
-    //     </div>
-    // </main>
-    <div class="bg-gradient font-[sans-serif]">
+    <div class="bg-grad font-[sans-serif]">
       <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
         <div class="max-w-md w-full animate-fadein">
           <div class="p-10 rounded-2xl bg-[rgba(255,255,255,0.2)] shadow-sh backdrop-blur-lg">
