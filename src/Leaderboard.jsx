@@ -57,8 +57,8 @@ export const Leaderboard = () => {
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>
-            <div className="text-white rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-30  max-h-full mt-20">
-                <Table className="table-auto  w-full text-center">
+            <div className="text-white h-[40vw] rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-30">
+                <Table className="table-auto h-[10%]  w-full text-center">
                     <TableHeader>
                         <TableRow className="bg-[#001C2A] p-4">
                             <TableHead className="px-2 text-white  font-bold text-lg text-center">Position</TableHead>
@@ -70,7 +70,7 @@ export const Leaderboard = () => {
                         </TableRow>
                     </TableHeader>
                 </Table>
-                <div className="max-h-80 overflow-y-auto text-center"> {/* Set a max height for scrolling */}
+                <div className="h-[90%] overflow-y-auto text-center"> {/* Set a max height for scrolling */}
                         <Table className="table-auto w-full text-center">
                             <TableBody>
                                 {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
