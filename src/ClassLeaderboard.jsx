@@ -22,7 +22,7 @@ export const ClassLeaderboard = () => {
     const [response, setResponse] = useState([]);
     const getClassLeaderboard = async () => {
         if (classId != null) {
-            const resp = await axios.get(`http://localhost:3000/api/leaderboard/class/${classId.toUpperCase()}`);
+            const resp = await axios.get(import.meta.env.VITE_API_URL+`api/leaderboard/class/${classId.toUpperCase()}`);
             setResponse(resp.data);
             console.log(resp.data);
         }

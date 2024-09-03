@@ -1,7 +1,7 @@
 import { Card } from './ui/card';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-function ProfileCard({className}) {
+function ProfileCard({className,userDetails}) {
   return (
     <Card className={`flex items-center justify-center min-h-80 bg-glassbg p-6 rounded-lg shadow-lg text-white border-none mt-4 ${className}`}>
       <div className="flex md:flex-row flex-col items-center space-x-4">
@@ -10,14 +10,14 @@ function ProfileCard({className}) {
           alt="Profile"
           className="rounded-full md:w-48 md:h-48 w-32 h-32 object-cover"
         />
-        <div className='ml-20 text-center'>
-          <h2 className="text-5xl font-bold mb-4">Leo Das</h2>
-          <p className="text-2xl mb-4">22PC19  |  CS  |  2022  |  Student</p>
+        <div className='w-fit text-center overflow-hidden'>
+          <span className="md:text-5xl text-3xl  font-bold truncate text-[#E89416]">{userDetails.name}</span>
+          <p className="text-2xl mb-4">{userDetails.id}  |  {userDetails.stream}  |  {userDetails.batch}  |  {userDetails.role}</p>
           <div className="flex space-x-4 mt-2 justify-center">
-            <a href="https://github.com/randomuser" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 mr-10">
+            <a href={`https://github.com/${userDetails.github}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 mr-10">
               <FaGithub size={30} />
             </a>
-            <a href="https://linkedin.com/in/randomuser" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+            <a href={`https://linkedin.com/in/${userDetails.linkedin}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
               <FaLinkedin size={30} />
             </a>
           </div>

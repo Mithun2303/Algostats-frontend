@@ -1,21 +1,79 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProfileCard from './components/ProfileCard'
 import TaskCard from './components/TaskCard'
 import RankingCard from './components/RankingCard'
 import RecentlySolvedCard from './components/RecentlySolved'
 import { Calendar } from './components/ui/calendar'
-
+import axios from 'axios'
+import Lottie from "lottie-react";
+import loader from "@/assets/loader.json"
 export function Dashboard() {
+  const [isLoading,setIsLoading] = useState(true);
+  const [userDetails, setUserDetails] = useState({});
+  const [recentlySolved,setRecentlySolved] = useState({});
+  const getUserDetails = async (jwt) => {
+    const response = await axios.get(import.meta.env.VITE_API_URL + 'api/user/me',
+      {
+        headers: {
+          Authorization: `Bearer ${jwt}`
+        }
+      })
+    setUserDetails(response.data);
+    console.log(response.data);
+    return true
+  }
 
+
+  const getRecentlySolved = async (jwt) => {
+    const response = await axios
+    .post(import.meta.env.VITE_API_URL + 'api/user/problem/8',
+      {
+        id:userDetails.id
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${jwt}`
+        }
+      })
+    setRecentlySolved(response.data);
+    console.log(response.data);
+    return true
+  }
+
+  const apiCalls = async(jwt) =>{
+    const response = await Promise.all([
+      getRecentlySolved(jwt),
+      getUserDetails(jwt)
+    ]);
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 4000);
+  }
+  useEffect(() => {
+    const jwt = localStorage.getItem(import.meta.env.VITE_JWT_HASH);
+    if (jwt) {
+      // Promise.all([
+      //   getRecentlySolved
+      // ])
+      apiCalls(jwt);
+      
+    }
+  }, [])
+
+  
   //const [date, setDate] = React.useState<Date | undefined>(new Date())
   return (
+    isLoading==true ? 
+    <main className='h-screen bg-[rgb(242,242,242)]  flex justify-center items-center'>
+      <Lottie animationData={loader} className=''/>
+    </main>:
     <div className="bg-grad md:p-8">
       <div className="md:flex flex-col md:flex-row gap-4">
         <div className='md:w-2/3'>
-          <ProfileCard className="" />
+          <ProfileCard className="" userDetails={userDetails} />
         </div>
         <div className='md:w-1/3'>
-          <RecentlySolvedCard className="px-12" />
+          <RecentlySolvedCard className="px-12" recentlySolved={recentlySolved} />
         </div>
       </div>
       {/* <div className="md:flex flex-col md:flex-row gap-6 mt-9">
@@ -69,7 +127,7 @@ export function Dashboard() {
         onSelect={setDate}
         className="rounded-md border" /> */}
 
-    {/* </div> */}
+      {/* </div> */}
 
     </div >
   )

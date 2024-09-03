@@ -5,7 +5,7 @@ function TaskCard({ assigned, title, completed, total }) {
     <Card className="bg-glassbg rounded-lg shadow-lg md:p-12 w-full p-12 w-7/8 w text-white border-none">
       <div className='flex justify-between gap-4 flex-wrap'>
         <div className='flex flex-col'>
-          <h3 className="md:text-4xl text-2xl font-semibold"> {title} </h3>
+          <h3 className="md:text-4xl  text-2xl font-semibold"> {title} </h3>
           <h4 className="md:text-xl text-md">Assigned by: {assigned}</h4>
           <h4 className="md:text-xl text-md">Problems: {total}</h4>
         </div>
