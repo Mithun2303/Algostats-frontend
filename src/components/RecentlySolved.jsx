@@ -1,6 +1,6 @@
 import { Card } from './ui/card';
 
-function RecentlySolvedCard() {
+function RecentlySolvedCard({className}) {
   const problems = [
     { title: 'Two Sum', difficulty: 'Easy' },
     { title: 'Add Two Numbers', difficulty: 'Hard' },
@@ -13,7 +13,7 @@ function RecentlySolvedCard() {
   ];
 
   return (
-    <Card className="bg-gray-700 p-4 h-80 rounded-lg text-white border-none shadow-lg mt-4">
+    <Card className={`bg-glassbg p-4 h-80 rounded-lg text-white border-none shadow-lg mt-4 ${className}`}>
       <h3 className="text-3xl font-semibold mb-4 mt-4">Recently Solved</h3>
       <ul>
   {problems.map((problem, index) => (

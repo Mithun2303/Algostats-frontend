@@ -1,15 +1,15 @@
 import { Card } from './ui/card';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-function ProfileCard() {
+function ProfileCard({className}) {
   return (
-    <Card className="flex items-center justify-center min-h-80 bg-gray-700 p-6 rounded-lg shadow-lg text-white border-none mt-4">
+    <Card className={`flex items-center justify-center min-h-80 bg-glassbg p-6 rounded-lg shadow-lg text-white border-none mt-4 ${className}`}>
     
       <div className="flex items-center space-x-4">
         <img
           src="./vite.svg" // Replace with the actual path to the image
           alt="Profile"
-          className="rounded-full w-48 h-48 object-cover"
+          className="rounded-full md:w-48 md:h-48 object-cover"
         />
         <div className='ml-20'>
           <h2 className="text-5xl font-bold mb-4">Leo Das</h2>
