@@ -15,8 +15,6 @@ import {
 } from "./components/ui/table"
 
 
-
-
 export const Leaderboard = () => {
     const [response, setResponse] = useState([]);
     const getLeaderboard = async () => {
@@ -39,14 +37,14 @@ export const Leaderboard = () => {
         </TableRow>)
     }
     return (
-        <main className="p-12 bg-grad ">
+        <main className="p-12">
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>
-            <div className="text-white rounded-lg overflow-auto bg-[rgba(255,255,255,0.1)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-24 ">
-                <Table className="text-center">
+            <div className="text-white h-[80vh] rounded-lg bg-[rgba(255,255,255,0.1)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-30">
+                <Table className="table-auto h-[10%]  w-full text-center">
                     <TableHeader>
-                        <TableRow className="bg-">
+                        <TableRow className="bg-[#001C2A] p-4">
                             <TableHead className="px-2 text-white  font-bold text-lg text-center">Position</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Roll Number</TableHead>
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Class</TableHead>
@@ -55,10 +53,14 @@ export const Leaderboard = () => {
                             <TableHead className="px-4 text-white  font-bold text-lg text-center">Batch</TableHead>
                         </TableRow>
                     </TableHeader>
-                    <TableBody className="">
-                        {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
-                    </TableBody>
                 </Table>
+                <div className="h-[90%] overflow-y-auto text-center"> {/* Set a max height for scrolling */}
+                        <Table className="table-auto w-full text-center">
+                            <TableBody>
+                                {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
+                            </TableBody>
+                        </Table>
+                </div>
 
             </div>
         </main>

@@ -27,12 +27,12 @@ function Login() {
     }
   }
   return (
-    <div className="bg-grad font-[sans-serif]">
-      <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">
-        <div className="max-w-md w-full animate-fadein">
-          <div className="p-10 rounded-2xl bg-[rgba(255,255,255,0.2)] shadow-sh backdrop-blur-lg">
-            <h2 className="text-white text-center text-2xl font-bold">Sign in</h2>
-            <form className="mt-8 space-y-4">
+    <div class=" font-[sans-serif]">
+      <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
+        <div class="max-w-md w-full animate-fadein">
+          <div class="p-10 rounded-2xl bg-[rgba(255,255,255,0.2)] shadow-sh backdrop-blur-lg">
+            <h2 class="text-white text-center text-2xl font-bold">Sign in</h2>
+            <form class="mt-8 space-y-4">
               <div>
                 <label className="text-white text-md font-bold mb-2 block">Email</label>
                 <div className="relative flex items-center">
