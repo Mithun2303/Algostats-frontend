@@ -15,31 +15,15 @@ import {
 } from "./components/ui/table"
 
 
-
-
 export const Leaderboard = () => {
     const [response, setResponse] = useState([]);
-    const generateSampleData = () => {
-        const sampleData = [];
-        for (let i = 1; i <= 40; i++) {
-            sampleData.push({
-                id: `22PC${i.toString().padStart(2, '0')}`,
-                class: "Applied Mathematics", // You can change this to a random name if needed
-                score: 100 + i, // Generating ascending scores
-                stream: "CS",
-                batch: "2022"
-            });
-        }
-        return sampleData;
-    };
     const getLeaderboard = async () => {
         const resp = await axios.get(`http://localhost:3000/api/leaderboard/`);
         setResponse(resp.data);
         console.log(resp.data);
     }
     useEffect(() => {
-        setResponse(generateSampleData());
-        //getLeaderboard();
+        getLeaderboard();
     }, []);
 
     const renderRow = (elt, idx) => {
@@ -53,11 +37,11 @@ export const Leaderboard = () => {
         </TableRow>)
     }
     return (
-        <main className="p-12 bg-grad ">
+        <main className="p-12">
             <div className="text-3xl text-white font-bold p-4 md:mx-24">
                 <span>Leaderboard - Applied Mathematics and Computational Sciences</span>
             </div>
-            <div className="text-white h-[40vw] rounded-lg bg-[rgba(255,255,255,0.2)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-30">
+            <div className="text-white h-[80vh] rounded-lg bg-[rgba(255,255,255,0.1)] p-4 shadow-2xl  backdrop-blur-2xl md:mx-30">
                 <Table className="table-auto h-[10%]  w-full text-center">
                     <TableHeader>
                         <TableRow className="bg-[#001C2A] p-4">

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Login() {
   return (
-    <div class="bg-grad font-[sans-serif]">
+    <div class=" font-[sans-serif]">
       <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
         <div class="max-w-md w-full animate-fadein">
           <div class="p-10 rounded-2xl bg-[rgba(255,255,255,0.2)] shadow-sh backdrop-blur-lg">

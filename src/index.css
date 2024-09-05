@@ -64,12 +64,12 @@
 }
 
 body{
-  background: linear-gradient(90deg, #000 7.26%, #00344D 28.01%, #014567 38.5%, #006A9D 54.88%, #004667 71.86%, #002D42 83.62%, #000 112.62%);
+  background: linear-gradient(120deg, #000 1.7%, #00344D 23.54%, #014567 34.6%, #006A9D 51.84%, #004667 69.72%, #002D42 82.11%, #000 112.66%);
   display: flex;
   justify-content: center;
   height: 100vh;
   margin: 0;
   /* background: linear-gradient(90deg, #000 7.26%, #00344D 28.01%, #014567 38.5%, #006A9D 54.88%, #004667 71.86%, #002D42 83.62%, #000 112.62%); */
-  background-color: #191919;
+  background-repeat: no-repeat;
   margin-left: 5px;
 }
