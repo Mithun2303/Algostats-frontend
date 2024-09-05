@@ -7,33 +7,29 @@ import { Calendar } from './components/ui/calendar'
 import axios from 'axios'
 import Lottie from "lottie-react";
 import loader from "@/assets/loader.json"
-export function Dashboard() {
+import { useParams } from 'react-router-dom'
+export function Dashboard({userId}) {
+  const {id} = useParams();
   const [isLoading,setIsLoading] = useState(true);
   const [userDetails, setUserDetails] = useState({});
-  const [recentlySolved,setRecentlySolved] = useState({});
+  const [recentlySolved,setRecentlySolved] = useState(null);
   const getUserDetails = async (jwt) => {
-    const response = await axios.get(import.meta.env.VITE_API_URL + 'api/user/me',
-      {
-        headers: {
-          Authorization: `Bearer ${jwt}`
-        }
-      })
+    const response = await axios.get(import.meta.env.VITE_API_URL + `api/user/${id}`,)
     setUserDetails(response.data);
     console.log(response.data);
     return true
   }
 
+  useEffect(()=>{
+    setUserDetails(null);
+    setRecentlySolved(null);
+  },[id])
 
   const getRecentlySolved = async (jwt) => {
     const response = await axios
     .post(import.meta.env.VITE_API_URL + 'api/user/problem/8',
       {
         id:userDetails.id
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${jwt}`
-        }
       })
     setRecentlySolved(response.data);
     console.log(response.data);
@@ -47,7 +43,7 @@ export function Dashboard() {
     ]);
     setTimeout(() => {
       setIsLoading(false)
-    }, 4000);
+    }, 2000);
   }
   useEffect(() => {
     const jwt = localStorage.getItem(import.meta.env.VITE_JWT_HASH);
@@ -58,22 +54,22 @@ export function Dashboard() {
       apiCalls(jwt);
       
     }
-  }, [])
+  }, [id])
 
   
   //const [date, setDate] = React.useState<Date | undefined>(new Date())
   return (
     isLoading==true ? 
-    <main className='h-screen bg-[rgb(242,242,242)]  flex justify-center items-center'>
+    <main className='h-screen w-screen bg-[rgb(242,242,242)] flex justify-center items-center'>
       <Lottie animationData={loader} className=''/>
     </main>:
-    <div className="bg-grad md:p-8">
+    <div className="bg-grd md:p-8">
       <div className="md:flex flex-col md:flex-row gap-4">
         <div className='md:w-2/3'>
           <ProfileCard className="" userDetails={userDetails} />
         </div>
         <div className='md:w-1/3'>
-          <RecentlySolvedCard className="px-12" recentlySolved={recentlySolved} />
+          {recentlySolved!=null && <RecentlySolvedCard className="px-12" recentlySolved={recentlySolved} />}
         </div>
       </div>
       {/* <div className="md:flex flex-col md:flex-row gap-6 mt-9">

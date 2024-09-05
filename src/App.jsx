@@ -10,12 +10,13 @@ import Login from './Login'
 import { Dashboard } from './Dashboard';
 
 function App() {
+  const [userId,setUserId] = useState();
 
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Dashboard/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/u/:id' element={<Dashboard userId={userId}/>}/>
+        <Route path='/login' element={<Login setUserId={setUserId}/>}/>
         <Route path='/leaderboard/' element={<Leaderboard/>}/>
         <Route path='/leaderboard/class/:classId' element={<ClassLeaderboard/>}/>
         <Route path='/leaderboard/batch/:batchId' element={<BatchLeaderboard/>}/>

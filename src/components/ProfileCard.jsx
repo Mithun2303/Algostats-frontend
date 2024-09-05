@@ -16,8 +16,10 @@ function ProfileCard({className,userDetails}) {
           <div className="flex space-x-4 mt-2 justify-center">
             <a href={`https://github.com/${userDetails.github}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 mr-10">
               <FaGithub size={30} />
+            </a><a href={`https://leetcode.com/u/${userDetails.leetcode}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 mr-10">
+              <FaGithub size={30} />
             </a>
-            <a href={`https://linkedin.com/in/${userDetails.linkedin}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+            <a href={userDetails.linkedIn} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
               <FaLinkedin size={30} />
             </a>
           </div>

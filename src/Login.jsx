@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({setUserId}) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,8 @@ function Login() {
         }
       )
       localStorage.setItem(import.meta.env.VITE_JWT_HASH, response.data.token);
-      navigate("/")
+      setUserId(response.data.id);
+      navigate(`/u/${response.data.id}`)
     } catch (error) {
       setShowError(true);
         setError(error.response.data.message)
