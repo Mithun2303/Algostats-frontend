@@ -14,10 +14,7 @@ import {
     TableRow,
 } from "./components/ui/table"
 
-
-
-
-export const ClassLeaderboard = () => {
+function ClassLeaderboard() {
     const { classId } = useParams();
     const [response, setResponse] = useState([]);
     const getClassLeaderboard = async () => {
@@ -66,3 +63,5 @@ export const ClassLeaderboard = () => {
         </main>
     )
 }
+
+export default ClassLeaderboard

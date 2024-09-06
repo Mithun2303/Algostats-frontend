@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-
 import { Button } from "./components/ui/button"
 import {
     Table,
@@ -14,8 +12,7 @@ import {
     TableRow,
 } from "./components/ui/table"
 
-
-export const Leaderboard = () => {
+function Leaderboard() {
     const [response, setResponse] = useState([]);
     const getLeaderboard = async () => {
         const resp = await axios.get(`http://localhost:3000/api/leaderboard/`);
@@ -66,3 +63,5 @@ export const Leaderboard = () => {
         </main>
     )
 }
+
+export default Leaderboard

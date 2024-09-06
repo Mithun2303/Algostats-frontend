@@ -8,7 +8,8 @@ import axios from 'axios'
 import Lottie from "lottie-react";
 import loader from "@/assets/loader.json"
 import { useParams } from 'react-router-dom'
-export function Dashboard({userId}) {
+
+function Dashboard({userId}) {
   const {id} = useParams();
   const [isLoading,setIsLoading] = useState(true);
   const [userDetails, setUserDetails] = useState({});
@@ -128,3 +129,7 @@ export function Dashboard({userId}) {
     </div >
   )
 }
+
+export default Dashboard
+
+

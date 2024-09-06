@@ -1,32 +1,22 @@
-import axios from 'axios';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useAuth } from './contexts/AuthProvider';
 
-function Login({setUserId}) {
-  const navigate = useNavigate();
+function Login({ setUserId }) {
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [showError, setShowError] = useState(false)
-  const handleSubmit = async (e) => {
-    console.log(email, password);
-    if (email.length != 0) {
+
+  const handleSubmit = async () => {
     try {
-      
-      const response = await axios.post(import.meta.env.VITE_API_URL + "api/auth/login/",
-        {
-          email: email, password: password
-        }
-      )
-      localStorage.setItem(import.meta.env.VITE_JWT_HASH, response.data.token);
-      setUserId(response.data.id);
-      navigate(`/u/${response.data.id}`)
+      await login(email, password);
     } catch (error) {
       setShowError(true);
-        setError(error.response.data.message)
+      setError("Login failed"); // or set the error message from the caught error
     }
-    }
-  }
+  };
+
   return (
     <div class=" font-[sans-serif]">
       <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
@@ -39,6 +29,7 @@ function Login({setUserId}) {
                 <div className="relative flex items-center">
                   <input name="email"
                     type="text"
+                    
                     onChange={(e) => {setEmail(e.target.value);setShowError(false)}}
                     className="w-full text-gray-800 text-sm border borer-gray-300 px-4 py-3 rounded-md outline-none" placeholder="@gmail.com" required />
                 </div>
@@ -77,7 +68,7 @@ function Login({setUserId}) {
               <div className="">
                 <button type="button"
                   onClick={(e) => handleSubmit(e)}
-                  className="w-full py-3 px-4 text-sm font-bold tracking-wide rounded-lg text-white bg-[#231717] bg-aq1 hover:bg-aq2 focus:outline-none">
+                  className="w-full py-3 px-4 text-sm font-bold tracking-wide rounded-lg text-white bg-[#002537] hover:bg-[#00344D] focus:outline-none">
                   Sign in
                 </button>
               </div>

@@ -12,10 +12,7 @@ import {
     TableRow,
 } from "./components/ui/table"
 
-
-
-
-export const StreamLeaderboard = () => {
+function StreamLeaderboard() {
     const { streamId } = useParams();
     const [response, setResponse] = useState([]);
     const getStreamLeaderboard = async () => {
@@ -67,3 +64,5 @@ export const StreamLeaderboard = () => {
         </main>
     )
 }
+
+export default StreamLeaderboard

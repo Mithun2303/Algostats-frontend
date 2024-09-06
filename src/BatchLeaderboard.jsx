@@ -12,10 +12,7 @@ import {
     TableRow,
 } from "./components/ui/table"
 
-
-
-
-export const BatchLeaderboard = () => {
+function BatchLeaderboard() {
     const { batchId } = useParams();
     const [response, setResponse] = useState([]);
     const getBatchLeaderboard = async () => {
@@ -68,3 +65,6 @@ export const BatchLeaderboard = () => {
         </main>
     )
 }
+
+export default BatchLeaderboard
+
