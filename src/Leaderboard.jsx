@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "./components/ui/button"
@@ -14,6 +14,7 @@ import {
 
 function Leaderboard() {
     const [response, setResponse] = useState([]);
+    const navigate = useNavigate();
     const getLeaderboard = async () => {
         const resp = await axios.get(`http://localhost:3000/api/leaderboard/`);
         setResponse(resp.data);
@@ -24,14 +25,15 @@ function Leaderboard() {
     }, []);
 
     const renderRow = (elt, idx) => {
-        return (<TableRow className={`${idx % 2 == 0 ? " hover:bg-[#363636]" : "hover:bg-[#2b2b2b]"}  `}>
-            <TableCell className="text-center">{idx + 1}</TableCell>
-            <TableCell className="text-center">{elt.id}</TableCell>
-            <TableCell className="text-center">{elt.class}</TableCell>
-            <TableCell className="text-center">{elt.score}</TableCell>
-            <TableCell className="text-center">{elt.stream}</TableCell>
-            <TableCell className="text-center">{elt.batch}</TableCell>
-        </TableRow>)
+        return (
+                <TableRow className={`${idx % 2 == 0 ? " hover:bg-[#363636]" : "hover:bg-[#2b2b2b]"}  `} onClick={()=>navigate(`/u/${elt.id}`)}>
+                    <TableCell className="text-center">{idx + 1}</TableCell>
+                    <TableCell className="text-center">{elt.id}</TableCell>
+                    <TableCell className="text-center">{elt.class}</TableCell>
+                    <TableCell className="text-center">{elt.score}</TableCell>
+                    <TableCell className="text-center">{elt.stream}</TableCell>
+                    <TableCell className="text-center">{elt.batch}</TableCell>
+                </TableRow>)
     }
     return (
         <main className="p-12">
@@ -52,11 +54,11 @@ function Leaderboard() {
                     </TableHeader>
                 </Table>
                 <div className="h-[90%] overflow-y-auto text-center"> {/* Set a max height for scrolling */}
-                        <Table className="table-auto w-full text-center">
-                            <TableBody>
-                                {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
-                            </TableBody>
-                        </Table>
+                    <Table className="table-auto w-full text-center">
+                        <TableBody>
+                            {response.length !== 0 && response.map((elt, idx) => renderRow(elt, idx))}
+                        </TableBody>
+                    </Table>
                 </div>
 
             </div>
