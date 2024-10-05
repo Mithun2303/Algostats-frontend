@@ -1,5 +1,6 @@
 import Stats from "@/components/Stats";
 import Profile from "@/components/ui/Profile";
+import Leaderboard from "@/components/Leaderboard";
 import { Calendar } from "@/components/ui/calendar";
 import React from "react";
 import { FaClock, FaCalendarAlt, FaMedal } from "react-icons/fa";
@@ -45,7 +46,7 @@ const cardData = [
 function Dashboard() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
-    <body className="bg-black w-screen h-screen">
+    <body className="bg-black w-screen">
       <div className="flex">
         <div className="flex">
           <div className="flex flex-col">
@@ -90,8 +91,14 @@ function Dashboard() {
                 </div>
               </div>
             </div>
+            
           </div>
+          
         </div>
+        
+      </div>
+      <div>
+        <Leaderboard />
       </div>
     </body>
   );
