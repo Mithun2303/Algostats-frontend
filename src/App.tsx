@@ -1,14 +1,13 @@
-import { Router } from './routes/Routes'
-import { Toaster } from './components/ui/toaster'
+// import { Toaster } from './components/ui/toaster'
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-
   return (
-    <>
-        <Router />
-        <Toaster />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
