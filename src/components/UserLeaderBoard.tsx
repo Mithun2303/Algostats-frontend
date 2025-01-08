@@ -1,4 +1,4 @@
-import crown from "@/assets/Images/crown.svg";
+import crown from "@/assets/Icons/crown.svg";
 // import "@/index.css"
 export const UserLeaderBoard = (props: {
   position: number;

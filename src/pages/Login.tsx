@@ -31,7 +31,7 @@ export const Login = () => {
             <button
               name=""
               id=""
-              className="rounde-xl w-1/3 border-2 rounded-3xl bg-primary p-4 font-semibold text-white text-lg"
+              className="rounded-xl w-full border-2  bg-primary p-4 font-semibold text-white text-lg"
             >
               Login
             </button>

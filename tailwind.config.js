@@ -14,7 +14,8 @@ export default {
 			},
 			colors: {
 				primary: "#5241AB",
-				awhite: "#F6F5FA"
+				awhite: "#F6F5FA",
+				lightPrimary:"#B7B0E1",
 			},
 			dropShadow:{
 				light:"8px 16px 10px rgba(0, 0, 0, 0.25)"
