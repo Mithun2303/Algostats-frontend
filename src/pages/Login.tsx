@@ -1,10 +1,10 @@
-import loginVector from "@/assets/Images/loginVector.jpeg";
+import loginVector from "@/assets/Images/loginVector.webp";
 export const Login = () => {
   return (
     <div className="w-screen h-dvh">
       <div className="flex justify-center  items-center h-full w-full md:flex-row flex-col space-y-10">
         <div className="md:w-1/2 w-full ">
-          <img src={loginVector} alt="" className="" />
+          <img src={loginVector} alt="" className="" loading="eager"/>
         </div>
         <div className="flex md:w-1/2 w-full  gap-y-4  items-center flex-col">
           <div className="md:w-1/2 w-3/4">
