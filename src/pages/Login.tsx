@@ -8,7 +8,7 @@ export const Login = () => {
         </div>
         <div className="flex md:w-1/2 w-full  gap-y-4  items-center flex-col">
           <div className="md:w-1/2 w-3/4">
-            <span className="relative top-3 left-4 bg-white p-2">Roll Number</span>
+            <span className="relative top-3 left-4 bg-white p-2 text-sm">Roll Number</span>
             <input
               type="text"
               name=""
@@ -18,7 +18,7 @@ export const Login = () => {
             />
           </div>
           <div className="md:w-1/2 w-3/4">
-            <span className="relative top-3 left-4 bg-white p-2">Password</span>
+            <span className="relative top-3 left-4 bg-white p-2 text-sm">Password</span>
             <input
               type="text"
               name=""
@@ -27,11 +27,11 @@ export const Login = () => {
               className="rounded-xl w-full border-2 border-primary p-4"
             />
           </div>
-          <div className="md:w-1/2 w-3/4">
+          <div className="md:w-1/2 w-3/4 flex justify-center">
             <button
               name=""
               id=""
-              className="rounded-xl w-full border-2 bg-primary p-4 font-semibold text-white text-lg"
+              className="rounde-xl w-1/3 border-2 rounded-3xl bg-primary p-4 font-semibold text-white text-lg"
             >
               Login
             </button>

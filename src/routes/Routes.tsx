@@ -1,4 +1,5 @@
 import { Loader } from "@/components/Loader";
+import { UserLeaderBoard } from "@/components/UserLeaderBoard";
 import { Login } from "@/pages/Login";
 import { Routes, Route } from "react-router-dom";
 
@@ -6,7 +7,8 @@ export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/sample" element={<Loader />} />
+      <Route path="/loader" element={<Loader />} />
+      <Route path="/user-leaderboard" element={<UserLeaderBoard position={3} leaderBoard="CLASS" />} />
     </Routes>
   );
 };
