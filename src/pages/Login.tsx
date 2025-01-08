@@ -1,23 +1,43 @@
-
+import loginVector from "@/assets/Images/loginVector.jpeg";
 export const Login = () => {
   return (
-        <>
-          <div>
-            <a href="https://vitejs.dev" target="_blank">
-            </a>
-            <a href="https://react.dev" target="_blank">
-            </a>
+    <div className="w-screen h-dvh">
+      <div className="flex justify-center  items-center h-full w-full md:flex-row flex-col space-y-10">
+        <div className="md:w-1/2 w-full ">
+          <img src={loginVector} alt="" className="" />
+        </div>
+        <div className="flex md:w-1/2 w-full  gap-y-4  items-center flex-col">
+          <div className="md:w-1/2 w-3/4">
+            <span className="relative top-3 left-4 bg-white p-2">Roll Number</span>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter roll number"
+              id=""
+              className="rounded-xl w-full border-2 border-primary p-4"
+            />
           </div>
-          <h1>Vite + React</h1>
-          <div className="card">
-            <p>
-              Edit <code>src/App.tsx</code> and save to test HMR
-            </p>
+          <div className="md:w-1/2 w-3/4">
+            <span className="relative top-3 left-4 bg-white p-2">Password</span>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter password"
+              id=""
+              className="rounded-xl w-full border-2 border-primary p-4"
+            />
           </div>
-          <p className="read-the-docs">
-            Click on the Vite and React logos to learn more
-          </p>
-        </>
-
-  )
-}
+          <div className="md:w-1/2 w-3/4">
+            <button
+              name=""
+              id=""
+              className="rounded-xl w-full border-2 bg-primary p-4 font-semibold text-white text-lg"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
