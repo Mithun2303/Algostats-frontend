@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/common/Navbar";
 import { UserLeaderBoard } from "@/components/common/UserLeaderBoard";
 import useWindowDimensions from "@/hooks/useWindowDimension";
 import Autoplay from "embla-carousel-autoplay";
