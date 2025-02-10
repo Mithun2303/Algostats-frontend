@@ -8,6 +8,40 @@ import { Home } from "@/pages/Home";
 import HomeLayout from "@/components/layouts/HomeLayout";
 
 export const Router = () => {
+
+  const leaderboarddata = [
+    {rank:1, name:"nidh", score:45},
+    {rank:2, name:"john", score:35},
+    {rank:3, name:"jenny", score:15},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35},
+    {rank:2, name:"john", score:35}  
+  ]; 
   return (
     <Routes>
       <Route path={ReactRoutes.LOGIN} element={<Login />} />
@@ -17,10 +51,7 @@ export const Router = () => {
         <Route path={ReactRoutes.HOME} element={<Home />} />
         {/* <Route path={ReactRoutes.HOME} element={<Home />} /> */}
       </Route>
-      <Route
-        path="/user-leaderboard"
-        element={<UserLeaderBoard position={3} leaderBoard="CLASS" />}
-      />
+      <Route path="/user-leaderboard" element={<UserLeaderBoard position={3} leaderBoard="BATCH" leaderBoardData={leaderboarddata} />} />
     </Routes>
   );
 };
