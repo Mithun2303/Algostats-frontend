@@ -5,7 +5,9 @@ export const UserLeaderBoard = (props: {
   leaderBoard: string;
 }) => {
   return (
-    <div className="min-w-fit px-10 pt-10 mx-10 flex flex-col items-center justify-center  bg-awhite rounded-[35px] drop-shadow-light">
+    <div
+      className={`min-w-fit md:mx-0 mx-10  px-10 pt-10 flex flex-col items-center justify-center  max-md:bg-awhite rounded-[35px] max-md:drop-shadow-light`}
+    >
       <img src={crown} alt="" className="fill-primary" />
       <div className="relative">
         <span className="text-[120px] text-primary  relative -top-12 special ">

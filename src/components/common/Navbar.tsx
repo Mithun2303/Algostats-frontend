@@ -23,7 +23,7 @@ export const Navbar = () => {
 
   return (
     // <div className="w-dvw h-dvh flex justify-center items-end py-8">
-    <div className="w-2/3 md:w-1/2 h-20 flex justify-evenly bg-primary rounded-full">
+    <div className="w-2/3 md:w-1/2 h-full p-2 flex justify-evenly items-center bg-primary rounded-full">
       <div className="flex items-center h-full" onClick={() => setActive(0)}>
         {active == 0 ? (
           <div className="w-full flex items-center p-2 rounded-full bg-[rgba(183,176,225,1)]">
